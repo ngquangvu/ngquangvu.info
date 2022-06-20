@@ -1,0 +1,91 @@
+[data-theme="dark"] {
+    --background-color-sw-mode: #fff;
+    --box-shadow-sw-mode: 0px 1px 6px #d9d9d9;
+}
+
+[data-theme="light"] {
+    --background-color-sw-mode: #fff;
+    --box-shadow-sw-mode: 0px 0px 6px #d9d9d9;
+}
+
+
+.toggle-btn {
+    position: relative;
+    width: 46px;
+    height: 24px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.toggle-btn input[type="checkbox"] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: 0px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+/* First toggle btn */
+
+#_1st-toggle-btn span {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    overflow: hidden;
+    opacity: 1;
+    background-color: var(--background-color-sw-mode);
+    box-shadow: var(--box-shadow-sw-mode);
+    border-radius: 20px;
+    transition: 0.2s ease background-color, 0.2s ease opacity;
+}
+
+#_1st-toggle-btn span:before,
+#_1st-toggle-btn span:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transition: 0.5s ease transform, 0.2s ease background-color;
+}
+
+#_1st-toggle-btn span:before {
+    background-color: #fff;
+    transform: translate(-5px, -3px);
+    z-index: 1;
+}
+
+#_1st-toggle-btn span:after {
+    background-color: #000;
+    transform: translate(3px, 1px);
+    z-index: 0;
+}
+
+#_1st-toggle-btn input[type="checkbox"]:checked+span {
+    background-color: #222;
+}
+
+#_1st-toggle-btn input[type="checkbox"]:active+span {
+    opacity: 0.5;
+}
+
+#_1st-toggle-btn input[type="checkbox"]:checked+span:before {
+    background-color: #222;
+    transform: translate(-25px, 0px);
+}
+
+#_1st-toggle-btn input[type="checkbox"]:checked+span:after {
+    background-color: #fff;
+    transform: translate(24px, 1px);
+}
+
+/* First toggle btn completed */
